@@ -1,2 +1,88 @@
-# One-love-Jana
-LOVE JANA
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Будем заниматься кексам?))))</title>
+  <style>
+    body {
+      background-color: pink;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      color: white;
+      font-size: 40px;
+      margin-top: 100px;
+    }
+    
+    .button {
+      display: inline-block;
+      background-color: pink;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    
+    .button:hover {
+      transform: scale(1.1);
+    }
+    
+    .running-button {
+      animation: runButton 3s infinite;
+    }
+    
+    @keyframes runButton {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(200px); }
+      100% { transform: translateX(0); }
+    }
+    
+    .valentine-card {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .valentine-card p {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Будем гулять?</h1>
+  
+  <div id="noButton" class="button" onmousemove="moveButton(event)" onclick="runButton()">Нет</div>
+  
+  <div id="yesButton" class="button" onclick="showValentineCard()">Да</div>
+  
+  <div class="valentine-card" id="valentineCard">
+    <p>Ураааа<3</p>
+  <script>
+    function runButton() {
+      var noButton = document.getElementById("noButton");
+      noButton.classList.add("running-button");
+    }
+    
+    function moveButton(event) {
+      var noButton = document.getElementById("noButton");
+      var x = event.clientX - noButton.offsetWidth / 2;
+      var y = event.clientY - noButton.offsetHeight / 2;
+      noButton.style.transform = "translate(" + x + "px, " + y + "px)";
+    }
+    
+    function showValentineCard() {
+      var valentineCard = document.getElementById("valentineCard");
+      valentineCard.style.display = "block";
+    }
+  </script>
+</body>
+</html>
